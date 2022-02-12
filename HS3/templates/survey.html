@@ -1,0 +1,339 @@
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to the survey page
+{% endblock %}
+{% block content %}
+    <div class="container ">
+         <div class="row text-center">
+
+            <div class="col border border-dark">
+                <h1>HS3 Sewer Survey Report </h1>
+            </div>
+
+        </div>
+        <div class="row text-center ">
+            <div class="col border border-dark   ">
+                Project Name:
+                <br>
+                Asda Glasgow
+            </div>
+            <div class="col border border-dark">
+                Project Number:
+                <br>
+                12345
+            </div>
+            <div class="col border border-dark ">
+                Contact:
+                <br>
+                {{data.name}}
+            </div>
+            <div class="col border border-dark">
+                Date:
+                <br>
+                {{data.date}}
+            </div>
+        </div>
+        <br>
+     </div>
+    <div class="container border border-dark">
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Project Name:
+            </div>
+            <div class="col font-weight-bold">
+                 Asda Glasgow
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Contact Name:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.name }}
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Department:
+            </div>
+            <div class="col font-weight-bold">
+                Associate Director
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Road:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.road }}
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Town:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.town }}
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                County:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.county }}
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Telephone:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.phone }}
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Email:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.email }}
+            </div>
+
+        </div>
+    </div>
+    <div class="container border border-dark">
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Site:
+            </div>
+            <div class="col font-weight-bold">
+                 {{data.site}}
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Contact Name:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.site }}
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Department:
+            </div>
+            <div class="col font-weight-bold">
+                Associate Director
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Road:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.road }}
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Town:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.town }}
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                County:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.county }}
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Telephone:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.phone }}
+            </div>
+
+        </div>
+        <div class="row text-left ">
+            <div class="col-4 ">
+                Email:
+            </div>
+            <div class="col font-weight-bold">
+                {{data.email }}
+            </div>
+
+        </div>
+
+    </div>
+    <div class="container border border-dark">
+        <div class="row text-center">
+            <div class="col ">
+                <h3>Defect Grade Description</h3>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container border border-dark">
+        <div class="row text-left text-success ">
+            <div class="col-1 ">
+                <h1>1:</h1>
+            </div>
+            <div class="col font-weight-bold">
+                 Brick: No Structural Defects
+                <br>
+                Pipe No Structural Defects
+                <br><br><br>
+                Acceptable Structural Conditions
+            </div>
+
+        </div>
+    </div>
+    <div class="container border border-dark">
+        <div class="row text-left text-primary ">
+            <div class="col-1 ">
+                <h1>2:</h1>
+            </div>
+            <div class="col font-weight-bold">
+                 Brick: Minor cracking, Surface mortar loss, Spalling slight, wear slight
+                <br>
+                Pipe: Circumfrential crack, Moderate joint defects, Spalling slight, Wear slight
+                <br><br><br>
+                Minor collapse risk in short term but potential for further deterioration
+            </div>
+
+        </div>
+    </div>
+    <div class="container border border-dark">
+        <div class="row text-left text-warning ">
+            <div class="col-1 ">
+                <h1>3:</h1>
+            </div>
+            <div class="col font-weight-bold">
+                Brick: Total mortorloss without other defects, single brick displaced, Deformation up to 5%,
+                <br>
+                Spalling medium, Wear medium
+                <br>
+                Pipe: Fractures with deformation up tp 5%, Longitudinal cracking or mulitlpe cracking, Minor
+                <br>
+                loss of level, More severe joint
+
+                <br><br><br>
+                ! Collapse unlikely in near future but future deterioration likely !
+            </div>
+
+        </div>
+    </div>
+    <div class="container border border-dark">
+        <div class= "row text-left " style="color:Magenta;">
+            <div class="col-1 ">
+                <h1>4:</h1>
+            </div>
+            <div class="col font-weight-bold">
+                Brick: Total mortorloss with deformation greater than 10%, Deformation up to 10% and
+                <br>
+                fractured, Displaced/hanging brickwork, Small number of missing bricks
+                <br>
+               Pipe: Broken, Deformation up to 10% and broken,, Fractured with deformation 5 - 10%,
+                <br><br><br>
+                !! Collapse likely in foreseeable future !!
+            </div>
+
+        </div>
+    </div>
+    <div class="container border border-dark">
+        <div class="row text-left text-danger ">
+            <div class="col-1 ">
+                <h1>5:</h1>
+            </div>
+            <div class="col font-weight-bold">
+                Brick: Already Collapsed, Missing invert, Deformation over 10% and fractured,
+                <br>
+                Displaced/hanging brickwork and deformation over 10%, Extensive missing bricks
+                <br>
+                Pipe: Already collapsed, Deformation over 10% and broken, Extensive areas of fabric missing
+                <br><br><br>
+                !!! Collapsed or collapse imminent !!!
+            </div>
+
+        </div>
+    </div>
+    <div class="container border border-dark">
+        <div class="row text-left  ">
+
+            <p>Comments:</p>
+        </div>
+    </div>
+    <div class="container border border-bottom-0 border-dark">
+        <div class="row text-left">
+            <div class="col-1 "> Position</div>
+            <div class="col-6">Obsevation</div>
+            <div class="col-1">Grade</div>
+            <div class="col-4">Photo</div>
+        </div>
+        {% for api_data in api_data %}
+        <div class="row text-left">
+            <div class="col-1 "> 0.1m</div>
+            <div class="col-6"> {{api_data["defectType"]}} </div>
+            <div class="col-1">{{api_data["grade"]}}</div>
+
+            <div class="col-4">
+                <image src='{{ url_for("static", filename= api_data["path"] ) }}' width="300" height="340">
+            </div>
+
+        </div>
+        <br>
+        {% endfor %}
+
+        <div class="row text-left  ">
+            <div class="col border border-dark "> Position</div>
+            <div class="col border border-dark">Obsevation</div>
+            <div class="col border border-dark">Grade</div>
+            <div class="col border border-dark">Photo</div>
+            <div class="col border border-dark "> Position</div>
+            <div class="col border border-dark">Obsevation</div>
+            <div class="col border border-dark">Grade</div>
+            <div class="col border border-dark">Photo</div>
+            <div class="col border border-dark "> Position</div>
+            <div class="col border border-dark">Obsevation</div>
+
+        </div>
+        <div class="row text-left  ">
+            <div class="col border border-dark "> 0</div>
+            <div class="col border border-dark">1</div>
+            <div class="col border border-dark">1</div>
+            <div class="col border border-dark">0</div>
+            <div class="col border border-dark "> 0</div>
+            <div class="col border border-dark">9</div>
+            <div class="col border border-dark">1.21</div>
+            <div class="col border border-dark">4</div>
+            <div class="col border border-dark "> 118</div>
+            <div class="col border border-dark">3</div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+{% endblock %}

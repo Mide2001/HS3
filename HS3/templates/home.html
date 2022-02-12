@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to Home Page
+{% endblock %}
+{% block content %}
+    <div class="container">
+    <div class="py-5 text-center">
+        <h2>HS3 Home Page</h2>
+        <p>Fill in all the fields and upload sewer inspection video for analysis</p>
+    </div>
+    <h4 class="mb-4"> Enter Info</h4>
+    <form action="/survey" enctype="multipart/form-data" class="" method="POST">
+        {{ form_data.csrf_token }}
+        <div class="row">
+        <div class="col-md-3 order-md-1">
+
+                    {{form_data.site(class='form-control',placeholder='Site')}}
+        </div>
+        <div class="col-md-3 order-md-2">
+
+                    {{form_data.email(class='form-control',placeholder='Email')}}
+        </div>
+        <div class="col-md-3 order-md-3">
+
+                    {{form_data.video(class='form-control-file',type='file')}}
+        </div>
+            <div class="col-md-3 order-md-4">
+                {{form_data.submit(class="btn btn-sm btn-block btn-secondary")}}
+        </div>
+    </div>
+
+
+
+
+    </form>
+</div>
+{% endblock %}

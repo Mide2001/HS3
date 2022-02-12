@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to Site Page
+{% endblock %}
+{% block content %}
+    <div class="container">
+    <div class="py-5 text-center">
+        <h2>HS3 New Site Page</h2>
+        <p>Fill in all the fields and add the site data </p>
+    </div>
+    <h4 class="mb-4"> Enter Information</h4>
+    <form action="/site" enctype="multipart/form-data" class="" method="POST">
+        {{ form.csrf_token }}
+    <div class="row">
+        <div class="col-md-4 order-md-1">
+                    {{form.name.label()}}
+                    {{form.name(class='form-control',placeholder='Name')}}
+        </div>
+        <div class="col-md-4 order-md-2">
+                    {{form.site.label()}}
+                    {{form.site(class='form-control',placeholder='Site')}}
+        </div>
+        <div class="col-md-4 order-md-3">
+                    {{form.road.label()}}
+                    {{form.road(class='form-control',placeholder='Road')}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 order-md-1">
+                    {{form.date.label()}}
+                    {{form.date(class='form-control',placeholder='dd/mm/yy', type='date')}}
+        </div>
+        <div class="col-md-4 order-md-2">
+                {{form.town.label()}}
+                {{form.town(class='form-control',placeholder='Town')}}
+        </div>
+        <div class="col-md-4 order-md-3">
+                {{form.county.label()}}
+                {{form.county(class='form-control',placeholder='County')}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 order-md-1">
+                {{form.phone.label()}}
+                {{form.phone(class='form-control',placeholder='Phone Number')}}
+        </div>
+        <div class="col-md-4 order-md-2">
+                {{form.email.label()}}
+                {{form.email(class='form-control',placeholder='Email',type='email')}}
+        </div>
+        <div class="col-md-4 order-md-3">
+                {{form.pipe_use.label()}}
+                {{form.pipe_use(class='form-control',placeholder='Pipe Use')}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 order-md-1">
+                {{form.year_laid.label()}}
+                {{form.year_laid(class='form-control',placeholder='Year Laid')}}
+        </div>
+        <div class="col-md-4 order-md-2">
+                {{form.pipe_length.label()}}
+                {{form.pipe_length(class='form-control',placeholder='Pipe Length')}}
+        </div>
+        <div class="col-md-4 order-md-3">
+                {{form.pipe_shape.label()}}
+                {{form.pipe_shape(class='form-control',placeholder='Pipe Shape')}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 order-md-1">
+                {{form.pipe_size.label()}}
+                {{form.pipe_size(class='form-control',placeholder='Pipe Size')}}
+        </div>
+        <div class="col-md-4 order-md-2">
+                {{form.pipe_material.label()}}
+                {{form.pipe_material(class='form-control',placeholder='Pipe Material')}}
+        </div>
+
+    </div>
+        <br>
+    <div class="row">
+        <div class="col-md-4">
+                {{form.submit(class="btn btn-sm btn-block btn-secondary")}}
+        </div>
+    </div>
+    </form>
+</div>
+{% endblock %}

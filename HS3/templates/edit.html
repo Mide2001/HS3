@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to Edit Page
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <form action="/edit" enctype="multipart/form-data" class="" method="POST">
+        {{ form.csrf_token }}
+        <div class="row">
+        <div class="col-md-4 order-md-1">
+
+                    {{form.site_select(class='form-control',placeholder='Site')}}
+        </div>
+        <div class="col-md-4 order-md-2">
+
+                    {{form.submit_update(class='btn btn-sm btn-block btn-secondary',placeholder='Update', value="Update")}}
+        </div>
+        <div class="col-md-4 order-md-3">
+
+                    {{form.submit_delete(class='btn btn-sm btn-block btn-secondary',placeholder='Delete',value="Delete")}}
+        </div>
+    </div>
+
+        {%if show %}
+
+            <div class="row">
+
+        <div class="col-md-4 order-md-1">
+                    {{form.name.label()}}
+                    {{form.name(class='form-control',value=data.name)}}
+        </div>
+        <div class="col-md-4 order-md-2">
+                    {{form.site.label()}}
+                    {{form.site(class='form-control',value=data.site)}}
+        </div>
+        <div class="col-md-4 order-md-3">
+                    {{form.road.label()}}
+                    {{form.road(class='form-control',value=data.road)}}
+        </div>
+    </div>
+            <div class="row">
+                <div class="col-md-4 order-md-1">
+                    {{form.date.label()}}
+                    {{form.date(class='form-control',value=data.date, type='date')}}
+                </div>
+                <div class="col-md-4 order-md-2">
+                    {{form.town.label()}}
+                    {{form.town(class='form-control',value=data.town)}}
+                </div>
+                <div class="col-md-4 order-md-3">
+                {{form.county.label()}}
+                {{form.county(class='form-control',value=data.county)}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 order-md-1">
+                    {{form.phone.label()}}
+                    {{form.phone(class='form-control',value=data.phone)}}
+                </div>
+                    <div class="col-md-4 order-md-2">
+                        {{form.email.label()}}
+                        {{form.email(class='form-control',value=data.email,type='email')}}
+                    </div>
+                <div class="col-md-4 order-md-3">
+                    {{form.pipe_use.label()}}
+                    {{form.pipe_use(class='form-control',value=data.pipe_use)}}
+                </div>
+            </div>
+            <div class="row">
+        <div class="col-md-4 order-md-1">
+                {{form.year_laid.label()}}
+                {{form.year_laid(class='form-control',value=data.year_laid)}}
+        </div>
+        <div class="col-md-4 order-md-2">
+                {{form.pipe_length.label()}}
+                {{form.pipe_length(class='form-control',value=data.pipe_length)}}
+        </div>
+        <div class="col-md-4 order-md-3">
+                {{form.pipe_shape.label()}}
+                {{form.pipe_shape(class='form-control',value=data.pipe_shape)}}
+        </div>
+            </div>
+            <div class="row">
+        <div class="col-md-4 order-md-1">
+                {{form.pipe_size.label()}}
+                {{form.pipe_size(class='form-control',value=data.pipe_size)}}
+        </div>
+        <div class="col-md-4 order-md-2">
+                {{form.pipe_material.label()}}
+                {{form.pipe_material(class='form-control',value=data.pipe_material)}}
+        </div>
+
+    </div>
+            <br>
+            <div class="row">
+        <div class="col-md-4">
+                {{form.submit_commit(class="btn btn-sm btn-block btn-secondary")}}
+        </div>
+    </div>
+
+
+        {%endif%}
+
+
+        </form>
+
+
+
+
+
+    </div>
+
+{% endblock %}

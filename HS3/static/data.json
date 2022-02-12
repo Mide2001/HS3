@@ -1,0 +1,44 @@
+{
+ "defect_detection": [
+ {
+ "defectType": "Crack",
+ "grade": 3,
+ "path": "image.jpg"
+ },
+ {
+ "defectType": "Fracture",
+ "grade": 5,
+ "path": "image2.jpg"
+ },
+  {
+ "defectType": "Crack",
+ "grade": 2,
+ "path": "image3.jpg"
+ },
+  {
+ "defectType": "Fracture",
+ "grade": 4,
+ "path": "image4.jpg"
+ },
+   {
+ "defectType": "Fracture",
+ "grade": 3,
+ "path": "image5.jpg"
+ },
+   {
+ "defectType": "Crack",
+ "grade": 5,
+ "path": "image6.jpg"
+ },
+   {
+ "defectType": "Fracture",
+ "grade": 3,
+ "path": "image7.jpg"
+ },
+   {
+ "defectType": "Crack",
+ "grade": 1,
+ "path": "image8.jpg"
+ }
+ ]
+}
