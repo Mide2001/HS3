@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to Model2 Page
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <form action="/model2" enctype="multipart/form-data" class="" method="POST">
+        {{ form.csrf_token }}
+    <div class="row">
+        <div class="col-md-3 order-md-1">
+            {{form.wind_direction.label()}}
+            {{form.wind_direction(class='form-control',placeholder='Wind Direction')}}
+        </div>
+        <div class="col-md-3 order-md-2">
+            {{form.pipe_size.label()}}
+            {{form.pipe_size(class='form-control',placeholder='Pipe Size')}}
+        </div>
+        <div class="col-md-3 order-md-3">
+            {{form.total_sewer_length.label()}}
+            {{form.total_sewer_length(class='form-control',placeholder='Total Sewer Length')}}
+        </div>
+            <div class="col-md-3 order-md-4">
+            {{form.flow_current_travel_time.label()}}
+            {{form.flow_current_travel_time(class='form-control',placeholder='Flow current Travel Time')}}
+        </div>
+
+
+    </div>
+
+         <div class="collapse " id="collapseExample">
+             <div class="row">
+                <div class="col-md-3 order-md-1">
+                    {{form.population.label()}}
+                    {{form.population(class='form-control',placeholder='Population')}}
+                </div>
+
+                <div class="col-md-3 order-md-2">
+                    {{form.free_flow_speed.label()}}
+                    {{form.free_flow_speed(class='form-control',placeholder='Free Flow Speed')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.current_travel_time.label()}}
+                    {{form.current_travel_time(class='form-control',placeholder='Current Travel Time')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.free_flow_travel_time.label()}}
+                    {{form.free_flow_travel_time(class='form-control',placeholder='Free Flow Travel Time')}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 order-md-1">
+                    {{form.confidence.label()}}
+                    {{form.confidence(class='form-control',placeholder='Confidence')}}
+                </div>
+
+                <div class="col-md-3 order-md-2">
+                    {{form.insp_length.label()}}
+                    {{form.insp_length(class='form-control',placeholder='Insp Length')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.tavg.label()}}
+                    {{form.tavg(class='form-control',placeholder='Tavg')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.tim.label()}}
+                    {{form.tim(class='form-control',placeholder='Tim')}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 order-md-1">
+                    {{form.tmax.label()}}
+                    {{form.tmax(class='form-control',placeholder='Tmax')}}
+                </div>
+
+                <div class="col-md-3 order-md-2">
+                    {{form.prcp.label()}}
+                    {{form.prcp(class='form-control',placeholder='Prcp')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.snow.label()}}
+                    {{form.snow(class='form-control',placeholder='Snow')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.wspd.label()}}
+                    {{form.wspd(class='form-control',placeholder='Wspd')}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 order-md-1">
+                    {{form.pres.label()}}
+                    {{form.pres(class='form-control',placeholder='Pres')}}
+                </div>
+                <div class="col-md-3 order-md-1">
+                    {{form.current_free_flow_speed.label()}}
+                    {{form.current_free_flow_speed(class='form-control',placeholder='current free flow speed')}}
+                </div>
+            </div>
+        </div>
+
+    <br>
+
+     <div class="row">
+         <div class="col-md-3 order-md-1" >
+            {{form.submit(class='btn btn-sm btn-block btn-secondary')}}
+        </div>
+         <div class="col-md-3 order-md-2">
+             <button action="/model2" class="btn btn-sm btn-block btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" value="show" aria-controls="collapseExample">
+                Show More
+            </button>
+         </div>
+         {%if data%}
+         <div class="col-md-3 order-md-3">
+             <button type="button" class="btn btn-sm btn-block btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                Show Results
+             </button>
+         </div>
+         {%endif%}
+
+     </div>
+        </form>
+{%if data%}
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Prediction</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{data}}
+      </div>
+    </div>
+  </div>
+</div>
+{%endif%}
+
+
+
+    </div>
+
+{% endblock %}
