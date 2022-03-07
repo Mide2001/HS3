@@ -1,0 +1,70 @@
+ {%if show %}
+            <div class="row">
+                <div class="col-md-3 order-md-1">
+                    {{form.population.label()}}
+                    {{form.population(class='form-control',placeholder='Population')}}
+                </div>
+
+                <div class="col-md-3 order-md-2">
+                    {{form.free_flow_speed.label()}}
+                    {{form.free_flow_speed(class='form-control',placeholder='Free Flow Speed')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.current_travel_time.label()}}
+                    {{form.current_travel_time(class='form-control',placeholder='Current Travel Time')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.free_flow_travel_time.label()}}
+                    {{form.free_flow_travel_time(class='form-control',placeholder='Free Flow Travel Time')}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 order-md-1">
+                    {{form.confidence.label()}}
+                    {{form.confidence(class='form-control',placeholder='Confidence')}}
+                </div>
+
+                <div class="col-md-3 order-md-2">
+                    {{form.insp_length.label()}}
+                    {{form.insp_length(class='form-control',placeholder='Insp Length')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.tavg.label()}}
+                    {{form.tavg(class='form-control',placeholder='Tavg')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.tim.label()}}
+                    {{form.tim(class='form-control',placeholder='Tim')}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 order-md-1">
+                    {{form.tmax.label()}}
+                    {{form.tmax(class='form-control',placeholder='Tmax')}}
+                </div>
+
+                <div class="col-md-3 order-md-2">
+                    {{form.prcp.label()}}
+                    {{form.prcp(class='form-control',placeholder='Prcp')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.snow.label()}}
+                    {{form.snow(class='form-control',placeholder='Snow')}}
+                </div>
+                <div class="col-md-3 order-md-3">
+                    {{form.wspd.label()}}
+                    {{form.wspd(class='form-control',placeholder='Wspd')}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 order-md-1">
+                    {{form.pres.label()}}
+                    {{form.pres(class='form-control',placeholder='Pres')}}
+                </div>
+                <div class="col-md-3 order-md-1">
+                    {{form.current_free_flow_speed.label()}}
+                    {{form.current_free_flow_speed(class='form-control',placeholder='current free flow speed')}}
+                </div>
+            </div>
+
+        {%endif%}
