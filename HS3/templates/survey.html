@@ -3,6 +3,12 @@
     Welcome to the survey page
 {% endblock %}
 {% block content %}
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <form action="/survey" enctype="multipart/form-data" class="" method="GET">
+            {{ form.csrf_token }}
+            {{form.submit_email(class='btn btn-sm btn-block btn-secondary',placeholder='Email')}}
+        </form>
+    </div>
     <div class="container ">
          <div class="row text-center">
 

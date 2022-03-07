@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm, Form
-from wtforms import StringField, SubmitField, HiddenField, FileField,IntegerField, SelectField
+from wtforms import StringField, SubmitField, HiddenField, FileField,IntegerField, SelectField, FloatField
 from wtforms.validators import Length, EqualTo, Email, DataRequired, ValidationError
 from wtforms_sqlalchemy.fields import QuerySelectField
 from HS3.models import Survey
@@ -50,3 +50,29 @@ class EditForm(FlaskForm):
     submit_update = SubmitField(label='Update Site')
     submit_delete = SubmitField(label='Delete Site')
     submit_commit = SubmitField(label="Commit Update")
+
+class Surveyform(FlaskForm):
+    email = StringField(label='Email')
+    submit_email = SubmitField(label='Send PDF')
+
+class Model2form(FlaskForm):
+    wind_direction = FloatField(label='Wind Direction:')
+    pipe_size = FloatField(label='Pipe Size:')
+    total_sewer_length = FloatField(label='Total Sewer Length:')
+    flow_current_travel_time = FloatField(label='Flow Current Travel Time:')
+    population = FloatField(label='Population:')
+    free_flow_speed = FloatField(label='Free Flow Speed:')
+    current_free_flow_speed = FloatField(label='Current Free Flow Speed:')
+    current_travel_time = FloatField(label='Current Travel Time:')
+    free_flow_travel_time = FloatField(label='Free Flow Travel Time:')
+    confidence = FloatField(label='Confidence:')
+    insp_length = FloatField(label='Insp Length:')
+    tavg = FloatField(label='Tavg:')
+    tim = FloatField(label='Tim:')
+    tmax = FloatField(label='Tmax:')
+    prcp = FloatField(label='Prcp:')
+    snow = FloatField(label='Snow:')
+    wspd = FloatField(label='Wspd:')
+    pres = FloatField(label='Pres:')
+    submit = SubmitField(label='Submit')
+    show = SubmitField(label='Show More Options')
