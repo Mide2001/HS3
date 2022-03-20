@@ -20,12 +20,34 @@
             {{form.total_sewer_length(class='form-control',placeholder='Total Sewer Length')}}
         </div>
             <div class="col-md-3 order-md-4">
-            {{form.flow_current_travel_time.label()}}
-            {{form.flow_current_travel_time(class='form-control',placeholder='Flow current Travel Time')}}
+            {{form.free_flow_travel_time.label()}}
+                {{form.free_flow_travel_time(class='form-control',placeholder='Free Flow Travel Time')}}
+
         </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-3 order-md-1">
+            {{form.population.label()}}
+            {{form.population(class='form-control',placeholder='Population')}}
+        </div>
+         <div class="col-md-3 order-md-1">
+            {{form.precipitation.label()}}
+            {{form.precipitation(class='form-control',placeholder='Precipitation')}}
+        </div>
+
+                <div class="col-md-3 order-md-1 collapse" id="collapseExample">
+                    {{form.pres.label()}}
+                    {{form.pres(class='form-control',placeholder='Pres')}}
+                </div>
+                <div class="col-md-3 order-md-1 collapse" id="collapseExample">
+                    {{form.current_free_flow_speed.label()}}
+                    {{form.current_free_flow_speed(class='form-control',placeholder='current free flow speed')}}
+                </div>
 
 
     </div>
+
 
          <div class="collapse " id="collapseExample">
              <div class="row">
@@ -43,8 +65,8 @@
                     {{form.current_travel_time(class='form-control',placeholder='Current Travel Time')}}
                 </div>
                 <div class="col-md-3 order-md-3">
-                    {{form.free_flow_travel_time.label()}}
-                    {{form.free_flow_travel_time(class='form-control',placeholder='Free Flow Travel Time')}}
+                    {{form.flow_current_travel_time.label()}}
+                    {{form.flow_current_travel_time(class='form-control',placeholder='Flow current Travel Time')}}
                 </div>
             </div>
             <div class="row">
@@ -85,16 +107,7 @@
                     {{form.wspd(class='form-control',placeholder='Wspd')}}
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3 order-md-1">
-                    {{form.pres.label()}}
-                    {{form.pres(class='form-control',placeholder='Pres')}}
-                </div>
-                <div class="col-md-3 order-md-1">
-                    {{form.current_free_flow_speed.label()}}
-                    {{form.current_free_flow_speed(class='form-control',placeholder='current free flow speed')}}
-                </div>
-            </div>
+
         </div>
 
     <br>

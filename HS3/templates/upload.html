@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+    Welcome to Upload Page
+{% endblock %}
+
+{% block content %}
+
+<div class="container" >
+
+    {%if status == 200%}
+    <div class="py-5 text-center" >
+        <h2>The upload was successful</h2>
+        <p>An email with the url to the report will be sent to you shortly</p>
+    </div>
+
+    {%endif%}
+    {%if status != 200%}
+    <div class="py-5 text-center" >
+        <h2>An error as occurred </h2>
+        <p>Please try again</p>
+    </div>
+
+   {%endif%}
+
+
+</div>
+
+
+{% endblock %}

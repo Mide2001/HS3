@@ -3,13 +3,25 @@
     Welcome to Home Page
 {% endblock %}
 {% block content %}
-    <div class="container">
-    <div class="py-5 text-center">
+
+
+
+<div class="container text-center" id="loader" style="display: none;">
+
+<img style=" margin:auto;" src='{{ url_for("static", filename= "Loading.gif" ) }}'>
+<div class="py-5 text-center" >
+        <h2>Uploading Video</h2>
+        <p>You will be notified when the video has been uploaded</p>
+    </div>
+</div>
+
+    <div class="container" id="show">
+    <div class="py-5 text-center" >
         <h2>HS3 Home Page</h2>
         <p>Fill in all the fields and upload sewer inspection video for analysis</p>
     </div>
     <h4 class="mb-4"> Enter Info</h4>
-    <form action="/survey" enctype="multipart/form-data" class="" method="POST">
+    <form action="/survey" enctype="multipart/form-data" class="" method="POST" onsubmit="loading();" >
         {{ form_data.csrf_token }}
         <div class="row">
         <div class="col-md-3 order-md-1">
@@ -25,7 +37,7 @@
                     {{form_data.video(class='form-control-file',type='file')}}
         </div>
             <div class="col-md-3 order-md-4">
-                {{form_data.submit(class="btn btn-sm btn-block btn-secondary")}}
+                {{form_data.submit(class="btn btn-sm btn-block btn-secondary" )}}
         </div>
     </div>
 
@@ -34,4 +46,7 @@
 
     </form>
 </div>
+
+
+
 {% endblock %}

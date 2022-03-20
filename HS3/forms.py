@@ -61,6 +61,7 @@ class Model2form(FlaskForm):
     total_sewer_length = FloatField(label='Total Sewer Length:')
     flow_current_travel_time = FloatField(label='Flow Current Travel Time:')
     population = FloatField(label='Population:')
+    precipitation = FloatField(label="Precipitation")
     free_flow_speed = FloatField(label='Free Flow Speed:')
     current_free_flow_speed = FloatField(label='Current Free Flow Speed:')
     current_travel_time = FloatField(label='Current Travel Time:')

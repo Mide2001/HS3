@@ -35,13 +35,18 @@ def survey_page():
         data = Survey.query.get_or_404(request.form["site"])
 
         survey = Survey.query.all()
+
         if request.files:
             file = request.files["video"]
             print(file)
-            api_data = requests.post("http://127.0.0.1:5000//test")
-            #api_data = requests.post("https://739e-82-15-80-198.ngrok.io/defect", files={"video":file})
-
-            api_data = json.loads(api_data.text)
+            print(request.form['email'])
+            myobj = {'video':file,'email': request.form['email']}
+            head = {"Content-Type":"multipart/form-data"}
+            vid = requests.post("http://project-hs3.eu-west-2.elasticbeanstalk.com/video_uploaded" ,headers =head ,data = myobj)
+            print(vid.status_code)
+            print(vid.content)
+            ##api_data = requests.post("http://127.0.0.1:5000//test")
+            ##api_data = json.loads(api_data.text)
             #print('This is the data:')
             #print(api_data)
             #for data in api_data['defect_detection']:
@@ -55,18 +60,17 @@ def survey_page():
         #response.headers['Content-Type'] = 'application/pdf'
         #return response
         #response.headers['Content-Disposition'] = 'attachment; filename=output.pdf'
-        res = render_template('survey.html', survey=survey,api_data=api_data['defect_detection'],data=data,form=form)
+        #res = render_template('survey.html', survey=survey,api_data=api_data['defect_detection'],data=data,form=form)
         #pdfkit.from_url('http://127.0.0.1:5000/survey', 'Test7.pdf', configuration=config)
-        pdfkit.from_string(res, 'Test5.pdf', configuration=config)
+        #pdfkit.from_string(res, 'Test5.pdf', configuration=config)
 
-        print(1)
-        return render_template('survey.html', survey=survey,api_data=api_data['defect_detection'],data=data,form=form)
+        return render_template('upload.html', status= vid.status_code)
+        ##return render_template('survey.html', survey=survey,api_data=api_data['defect_detection'],data=data,form=form)
             #print("Get request sent")
             # print(request)
     #if form.validate_on_submit():
         #pdfkit.from_file("C:/Users/abdul/PycharmProjects/HS3 Deployment/HS3/templates/survey.html", 'Test.pdf',configuration=config)
-        # myobj = {'report': 'qwerty', 'email':'abdulbar2001@gmail.com'}
-        # request.post('https://b1b9-82-15-80-198.ngrok.io/send_report',headers = {"Content-Type": "multipart/form-data"},data= myobj)
+
     else:
         print("Here")
         form_data = SubmitForm()
